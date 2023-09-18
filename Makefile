@@ -31,3 +31,5 @@ run:
 	@./$(BUILD)/$(TARGET)
 
 r: all run
+
+c: clean all run

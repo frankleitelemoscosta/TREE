@@ -4,13 +4,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Heap.hpp"
+#include <codecvt>
+#include <string>
+#include<iostream>
+#include <cstring>
+
+using namespace std;
 
 typedef struct Record_AVL Record_AVL;
 typedef struct Tree_AVL Tree_AVL;
 
 struct Record_AVL {
 	int value;
-	int key;
+	char *key;
 };
 
 struct Tree_AVL {

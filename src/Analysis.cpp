@@ -77,7 +77,7 @@ void Analysis(){
       printf("File number: %d\n",counter);
       counter++;
       Tree_1 *tre = createTree();
-
+      Tree_AVL *avl = createTree_AVL();
 
       FillingHeap(Heapp,mp);
  
@@ -88,6 +88,14 @@ void Analysis(){
           central(tre);
 
           printf("}\n\n"); 
+
+      FillingAvl(Heapp,&avl);
+
+       printf("METODO CENTRAL PARA AVL: { ");                                                                
+          central_AVL(avl);
+
+          printf("}\n\n"); 
+
 
       //in here add the print of the heap.
       printEnd(Heapp,output);

@@ -12,6 +12,7 @@
 #include<unordered_map>
 #include"StopWords.hpp"
 #include"Tree.hpp"
+#include"Avl.hpp"
 
 using namespace std;
 

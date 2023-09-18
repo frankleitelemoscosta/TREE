@@ -9,15 +9,26 @@
 #include <codecvt>
 #include <string>
 #include <cstring>
+#include<vector>
 
 using namespace std;
 
 typedef struct Record_1 Record_1;
 typedef struct Tree_1 Tree_1;
+typedef struct Palavras Palavras;
+
+struct Palavras
+{
+	char *palavra;
+};
+
 
 struct Record_1 {
 	int value;
 	char *key;
+	//char **keytwo;
+	int quantity;
+	Palavras *palavras;
 };
 
 struct Tree_1 {

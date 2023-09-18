@@ -13,12 +13,12 @@ void insertItem_AVL(Tree_AVL **t, Record_AVL item) {
 		insertItem_AVL(&(*t)->esq, item);
 
 		if (getPeso(&(*t)->esq) - getPeso(&(*t)->dir) == 2) {
-			if (item.key < (*t)->esq->item.key)
+			if (item.value < (*t)->esq->item.value)
 				rotacaoSimplesDireita_AVL(t);
 			else
 				rotacaoDuplaDireita_AVL(t);
 		}
-	} else if (item.key > (*t)->item.key) {
+	} else if (item.value > (*t)->item.value) {
 		insertItem_AVL(&(*t)->dir, item);
 
 		if (getPeso(&(*t)->dir) - getPeso(&(*t)->esq) == 2) {
@@ -34,7 +34,7 @@ void insertItem_AVL(Tree_AVL **t, Record_AVL item) {
 void antecessor_AVL(Tree_AVL **t, Tree_AVL *aux) {
 	if ((*t)->dir != NULL) {
 		antecessor_AVL(&(*t)->dir, aux);
-		return;
+return;
 	}
 	aux->item = (*t)->item;
 	aux = *t;
@@ -64,8 +64,8 @@ void rebalancear_AVL(Tree_AVL **t) {
 
 void preordem_AVL(Tree_AVL *t) {
 	if (!(t == NULL)) {
-		printf("%d ", t->item.key);
-		preordem_AVL(t->esq);
+		cout << t->item.key <<endl;
+                preordem_AVL(t->esq);
 		preordem_AVL(t->dir);
 	}
 }
@@ -73,7 +73,7 @@ void preordem_AVL(Tree_AVL *t) {
 void central_AVL(Tree_AVL *t) {
 	if (!(t == NULL)) {
 		preordem_AVL(t->esq);
-		printf("%d ", t->item.key);
+		cout << t->item.key << endl;
 		preordem_AVL(t->dir);
 	}
 }
@@ -82,7 +82,7 @@ void posordem_AVL(Tree_AVL *t) {
 	if (!(t == NULL)) {
 		preordem_AVL(t->esq);
 		preordem_AVL(t->dir);
-		printf("%d ", t->item.key);
+		cout << t->item.key <<endl;
 	}
 }
 
@@ -171,4 +171,29 @@ void free_AVL(Tree_AVL *t) {
 		free_AVL(t->dir);
 		free(t);
 	}
+}
+
+void FillingAvl(Vector &Heapp,Tree_AVL **avl)
+{
+  Record_AVL record;
+  string aux_conv_strin;
+  char *aux_conv_cha;
+  wstring_convert<codecvt_utf8<wchar_t>> converter;
+
+
+  for(auto item : Heapp.vet)
+  {
+   aux_conv_strin = converter.to_bytes(item.value);
+    
+    aux_conv_cha = (char*)malloc((aux_conv_strin.length() + 1)*sizeof(char));
+
+    strcpy(aux_conv_cha, aux_conv_strin.c_str());
+
+    record.key = aux_conv_cha;
+    record.value = item.frequence;
+
+    insertItem_AVL(avl,record);
+
+  }
+
 }

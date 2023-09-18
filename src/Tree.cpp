@@ -18,14 +18,21 @@ void insertItem(Tree_1 **tre, Record_1 r) {
 		(*tre)->esq = NULL;
 		(*tre)->dir = NULL;
 		(*tre)->reg = r;
-               // cout<< (*tre)->reg.key <<endl;
+		(*tre)->reg.palavras = (Palavras*)malloc(20 * sizeof(Palavras));
 
         } else {
-		if (r.key < (*tre)->reg.key)
+		if (r.value < (*tre)->reg.value){
 			insertItem(&(*tre)->esq, r);
+			}
+		else if (r.value > (*tre)->reg.value){
+			insertItem(&(*tre)->dir, r);}
+		else{
+			printf("igual: %s - %d\n", r.key, r.value);
+			(*tre)->reg.palavras[(*tre)->reg.quantity].palavra = (char *)malloc(40*sizeof(char));
+			(*tre)->reg.palavras[(*tre)->reg.quantity].palavra = r.key;
+		    (*tre)->reg.quantity++;
 
-		if (r.key > (*tre)->reg.key)
-			insertItem(&(*tre)->dir, r);
+		}
 	}
 }
 
@@ -94,7 +101,11 @@ void central(Tree_1 *tre) {
  
   if (!(tre == NULL)) {
     central(tre->esq);
-    cout << tre->reg.key << " ";
+    cout << tre->reg.key << "-";
+	for(int i = 0 ; i < tre->reg.quantity ; i++)
+	{
+		cout << tre->reg.palavras[i].palavra << " ";
+	}cout << "\n";
     central(tre->dir);
 	}
 }
@@ -122,6 +133,8 @@ void FillingBasicTree(Vector &Heapp,Tree_1 **tre ){
     aux_conv_cha = (char*)malloc((aux_conv_strin.length() + 1)*sizeof(char));
 
     strcpy(aux_conv_cha, aux_conv_strin.c_str());
+
+	rec.quantity = 0;
 
     rec.key = aux_conv_cha;
     rec.value = item.frequence;
