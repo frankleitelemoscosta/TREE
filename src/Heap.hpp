@@ -32,7 +32,6 @@ struct Vector{
 
 void FillingHeap(Vector &Heapp,Hashh &mp);
 void Heapfy(Vector &Heapp);
-void ClearHeap(Vector &Heapp);
 
 
 #endif

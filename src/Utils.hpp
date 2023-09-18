@@ -17,7 +17,7 @@ using namespace std;
 wchar_t *getText(const locale &loc,int counter);
 void printStart(std::wofstream &output);
 std::wofstream createOutput(const std::locale &loc);
-void printEnd(Vector *v);
+void printEnd(Vector &Heapp,std::wofstream &output);
 
 
 #endif

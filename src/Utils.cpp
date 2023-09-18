@@ -40,12 +40,19 @@ wchar_t *getText(const std::locale &loc,int counter)
 }
 
 //this function print the result for user
-void printEnd( Vector *Heapp)
+void printEnd(Vector &Heapp, std::wofstream &output)
 {
+
+  output << L"File"<< L"\t\t\t|"<< L"Palavra" << L"\t\t\t|" << L"Contagem de frequencia no texto" <<  L"\t\t\t|" << L"\n";
 
 
    for(int i = 0 ; i < MAXSIZE ; i++) {
+
+      output << L"\t\t\t\t" << Heapp.vet[i].value << L"\t\t\t\t"<< Heapp.vet[i].frequence << L"\n";
    }
+
+
+   output << L"======================================================================================================================================\n";
 }
 
 std::wofstream createOutput(const std::locale &loc)
@@ -66,10 +73,6 @@ void printStart(std::wofstream &output)
 {
 	output << L"======================================================================================================================================\n"
 					  L"=>                                                    ### START PROCESS ###\n"
-	          L"======================================================================================================================================\n"
-            L"\n"
-	          L"======================================================================================================================================\n"
-				    L"=>                                                    ### PARTIAL RESULT ###\n"
 	          L"======================================================================================================================================\n"
             L"\n";
 }

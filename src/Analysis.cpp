@@ -14,6 +14,9 @@ void Analysis(){
   Hashh mp;//for hash
   srand(42); 
   Vector Heapp;
+
+  //init the output file.
+  printStart(output);
   
   //main loop
   while (*ch) {
@@ -75,11 +78,14 @@ void Analysis(){
       counter++;
 
       FillingHeap(Heapp,mp);
-  
+ 
+      //in here add the print of the heap.
+      printEnd(Heapp,output);
+
       if(counter < 7){
 
         mp.mp.clear();//clear the hash for other input text
-        ClearHeap(Heapp);
+        Heapp.vet.clear();
         ch = getText(loc,counter);//puting other text and inserting in the variable ch.
       
       }else{
