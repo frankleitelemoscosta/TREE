@@ -11,6 +11,7 @@
 #include"Heap.hpp"
 #include<unordered_map>
 #include"StopWords.hpp"
+#include"Tree.hpp"
 
 using namespace std;
 

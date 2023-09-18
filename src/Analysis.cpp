@@ -76,9 +76,19 @@ void Analysis(){
     {
       printf("File number: %d\n",counter);
       counter++;
+      Tree_1 *tre = createTree();
+
 
       FillingHeap(Heapp,mp);
  
+      //in here filling all trees
+      FillingBasicTree(Heapp,&tre);
+
+      printf("METODO CENTRAL: { ");                                                                
+          central(tre);
+
+          printf("}\n\n"); 
+
       //in here add the print of the heap.
       printEnd(Heapp,output);
 
