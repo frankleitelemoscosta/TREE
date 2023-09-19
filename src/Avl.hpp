@@ -13,10 +13,19 @@ using namespace std;
 
 typedef struct Record_AVL Record_AVL;
 typedef struct Tree_AVL Tree_AVL;
+typedef struct Palavras Palavras;
+
+struct Palavras
+{
+	char *palavra;
+};
+
 
 struct Record_AVL {
 	int value;
 	char *key;
+	int quantity;
+	Palavras *palavras;
 };
 
 struct Tree_AVL {
@@ -28,11 +37,6 @@ struct Tree_AVL {
 Tree_AVL *createTree_AVL();
 
 void insertItem_AVL(Tree_AVL **t, Record_AVL r);
-// void pesquisa(Tree_AVL **t, Tree_AVL **aux, Record_AVL r);
-
-// void antecessor_AVL(Tree_AVL **t, Tree_AVL *aux);
-// void rebalancear_AVL(Tree_AVL **t);
-
 void removeItem_AVL(Tree_AVL **t, Tree_AVL **f, Record_AVL item);
 
 void preordem_AVL(Tree_AVL *t);

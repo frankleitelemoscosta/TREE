@@ -18,7 +18,7 @@ void insertItem(Tree_1 **tre, Record_1 r) {
 		(*tre)->esq = NULL;
 		(*tre)->dir = NULL;
 		(*tre)->reg = r;
-		(*tre)->reg.palavras = (Palavras*)malloc(20 * sizeof(Palavras));
+		(*tre)->reg.palavras = (Palavras_B*)malloc(20 * sizeof(Palavras_B));
 
         } else {
 		if (r.value < (*tre)->reg.value){
@@ -27,7 +27,6 @@ void insertItem(Tree_1 **tre, Record_1 r) {
 		else if (r.value > (*tre)->reg.value){
 			insertItem(&(*tre)->dir, r);}
 		else{
-			printf("igual: %s - %d\n", r.key, r.value);
 			(*tre)->reg.palavras[(*tre)->reg.quantity].palavra = (char *)malloc(40*sizeof(char));
 			(*tre)->reg.palavras[(*tre)->reg.quantity].palavra = r.key;
 		    (*tre)->reg.quantity++;
@@ -36,77 +35,24 @@ void insertItem(Tree_1 **tre, Record_1 r) {
 	}
 }
 
-void pesquisa(Tree_1 **tre, Tree_1 **aux, Record_1 r) {
-	if (*tre == NULL) {
-		printf("[ERRO]: Node not found!\n");
-		return;
-	}
-
-	if ((*tre)->reg.key < r.key) { pesquisa(&(*tre)->esq, aux, r); return; }
-	if ((*tre)->reg.key > r.key) { pesquisa(&(*tre)->dir, aux, r); return; }
-
-	*aux = *tre;
-}
-
-void antecessor(Tree_1 **tre, Tree_1 *aux) {
-	if ((*tre)->dir != NULL) {
-		antecessor(&(*tre)->dir, aux);
-		return;
-	}
-
-	aux->reg = (*tre)->reg;
-	aux = *tre;
-	*tre = (*tre)->esq;
-	free(aux);
-}
-
-void removeItem(Tree_1 **tre, Record_1 r) {
-	Tree_1 *aux;
-
-	if (*tre == NULL) {
-		printf("[ERROR]: Record_1 not found!!!\n");
-		return;
-	}
-
-	if ((*tre)->reg.key > r.key) { removeItem(&(*tre)->esq, r); return; }
-	if ((*tre)->reg.key < r.key) { removeItem(&(*tre)->dir, r); return; }
-
-	if ((*tre)->dir == NULL) {
-		aux = *tre;
-		*tre = (*tre)->esq;
-		free(aux);
-		return;
-	}
-
-	if ((*tre)->esq != NULL) {
-		antecessor(&(*tre)->esq, *tre);
-		return;
-	}
-
-	aux = *tre;
-	*tre = (*tre)->dir;
-	free(aux);
-}
-
 void preordem(Tree_1 *tre) {
 	if (!(tre == NULL)) {
-		// printf("%d ", t->reg.key);
 		std::cout << tre->reg.key << " ";
 		preordem(tre->esq);
 		preordem(tre->dir);
 	}
 }
 
-void central(Tree_1 *tre) {
+void central(Tree_1 *tre,std::wofstream &output) {
  
   if (!(tre == NULL)) {
-    central(tre->esq);
+    central(tre->esq,output);
     cout << tre->reg.key << "-";
 	for(int i = 0 ; i < tre->reg.quantity ; i++)
 	{
 		cout << tre->reg.palavras[i].palavra << " ";
-	}cout << "\n";
-    central(tre->dir);
+	} 
+    central(tre->dir,output);
 	}
 }
 
@@ -114,7 +60,6 @@ void posordem(Tree_1 *tre) {
 	if (!(tre == NULL)) {
 		posordem(tre->esq);
 		posordem(tre->dir);
-		// printf("%d ", t->reg.key);
 		std::cout << tre->reg.key << " ";
 	}
 }

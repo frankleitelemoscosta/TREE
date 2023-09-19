@@ -2,45 +2,42 @@
 
 Tree_AVL *createTree_AVL() { return NULL; }
 
-void insertItem_AVL(Tree_AVL **t, Record_AVL item) {
+void insertItem_AVL(Tree_AVL **t, Record_AVL iteM) {
 	if (*t == NULL) {
 		*t = (Tree_AVL *)malloc(sizeof(Tree_AVL));
 		(*t)->esq = NULL;
 		(*t)->dir = NULL;
-		(*t)->item = item;
+		(*t)->item = iteM;
 		(*t)->peso = 0;
-	} else if (item.key < (*t)->item.key) {
-		insertItem_AVL(&(*t)->esq, item);
+		(*t)->item.palavras = (Palavras*)malloc(20 * sizeof(Palavras));
+
+	} else if (iteM.value < (*t)->item.value) {
+		insertItem_AVL(&(*t)->esq, iteM);
 
 		if (getPeso(&(*t)->esq) - getPeso(&(*t)->dir) == 2) {
-			if (item.value < (*t)->esq->item.value)
+			if (iteM.value < (*t)->esq->item.value)
 				rotacaoSimplesDireita_AVL(t);
 			else
 				rotacaoDuplaDireita_AVL(t);
 		}
-	} else if (item.value > (*t)->item.value) {
-		insertItem_AVL(&(*t)->dir, item);
+	} else if (iteM.value > (*t)->item.value) {
+		insertItem_AVL(&(*t)->dir, iteM);
 
 		if (getPeso(&(*t)->dir) - getPeso(&(*t)->esq) == 2) {
-			if (item.key > (*t)->dir->item.key)
+			if (iteM.key > (*t)->dir->item.key)
 				rotacaoSimplesEsquerda_AVL(t);
 			else
 				rotacaoDuplaEsquerda_AVL(t);
 		}
-	}
+	}else{
+			(*t)->item.palavras[(*t)->item.quantity].palavra = (char *)malloc(40*sizeof(char));
+			(*t)->item.palavras[(*t)->item.quantity].palavra = iteM.key;
+		    (*t)->item.quantity++;
+
+		}
 	(*t)->peso = getMaxPeso(getPeso(&(*t)->esq), getPeso(&(*t)->dir)) + 1;
 }
 
-void antecessor_AVL(Tree_AVL **t, Tree_AVL *aux) {
-	if ((*t)->dir != NULL) {
-		antecessor_AVL(&(*t)->dir, aux);
-return;
-	}
-	aux->item = (*t)->item;
-	aux = *t;
-	*t = (*t)->esq;
-	free(aux);
-}
 
 void rebalancear_AVL(Tree_AVL **t) {
 	int delta;
@@ -72,9 +69,13 @@ void preordem_AVL(Tree_AVL *t) {
 
 void central_AVL(Tree_AVL *t) {
 	if (!(t == NULL)) {
-		preordem_AVL(t->esq);
-		cout << t->item.key << endl;
-		preordem_AVL(t->dir);
+		central_AVL(t->esq);
+		cout << t->item.key << "-";
+	        for(int i = 0 ; i < t->item.quantity ; i++)
+	        {
+	  	    cout << t->item.palavras[i].palavra << " ";
+	        }cout << "\n";
+                central_AVL(t->dir);
 	}
 }
 
@@ -125,46 +126,6 @@ void rotacaoDuplaEsquerda_AVL(Tree_AVL **t) {
 	rotacaoSimplesDireita_AVL(&(*t)->dir);
 	rotacaoSimplesEsquerda_AVL(t);
 }
-
-void removeItem_AVL(Tree_AVL **t, Tree_AVL **f, Record_AVL item) {
-	Tree_AVL *aux;
-
-	if (*t == NULL) {
-		printf("Nao foi possivel encontrar o valor: %d\n", item.key);
-		return;
-	}
-
-	if (item.key < (*t)->item.key) {
-		removeItem_AVL(&(*t)->esq, t, item);
-		return;
-	}
-	if (item.key > (*t)->item.key) {
-		removeItem_AVL(&(*t)->dir, t, item);
-		return;
-	}
-
-	if ((*t)->dir == NULL) {
-		aux = *t;
-		*t = (*t)->esq;
-		free(aux);
-		rebalancear_AVL(f);
-		return;
-	}
-
-	if ((*t)->esq != NULL) {
-		antecessor_AVL(&(*t)->esq, *t);
-		rebalancear_AVL(f);
-		rebalancear_AVL(t);
-		return;
-	}
-
-	aux = *t;
-	*t = (*t)->dir;
-	free(aux);
-	rebalancear_AVL(f);
-	rebalancear_AVL(t);
-}
-
 void free_AVL(Tree_AVL *t) {
 	if (t != NULL) {
 		free_AVL(t->esq);
@@ -188,6 +149,8 @@ void FillingAvl(Vector &Heapp,Tree_AVL **avl)
     aux_conv_cha = (char*)malloc((aux_conv_strin.length() + 1)*sizeof(char));
 
     strcpy(aux_conv_cha, aux_conv_strin.c_str());
+
+    record.quantity = 0;
 
     record.key = aux_conv_cha;
     record.value = item.frequence;
