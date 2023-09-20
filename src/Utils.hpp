@@ -9,16 +9,15 @@
 #include"Heap.hpp"
 #include <dirent.h>
 #include <codecvt>
+#include "Tree.hpp"
 
 #define MAXFILES 2;
 
 using namespace std;
 
 wchar_t *getText(const locale &loc,int counter);
-void printStart(std::wofstream &output);
-std::wofstream createOutput(const std::locale &loc);
-void printEnd(Vector &Heapp,std::wofstream &output);
-
+void PrintEnd(std::ofstream &output, Vector &Heapp,int counter,Tree_1 **tre);
+std::ofstream createOutput();
 
 #endif
 //end code

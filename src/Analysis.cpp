@@ -8,16 +8,15 @@ void Analysis(){
   //local variables
   int counter = 1;//this variable is use for show in what text is analysing.
   wchar_t *txt = getText(loc,counter), *ch = txt;//for variable that walking the text 
-  wofstream output = createOutput(loc);
+  std::ofstream output = createOutput(); 
   wstring word;//for the word that will read of the input text
   StopWords stop_words(loc);//for stop words
   Hashh mp;//for hash
   srand(42); 
   Vector Heapp;
 
-  //init the output file.
-  printStart(output);
-  
+ 
+
   //main loop
   while (*ch) {
 
@@ -26,7 +25,7 @@ void Analysis(){
       //in case the ch is in the end sentence or a speak or a question.
       case L'.': case L'!': case L'?':
         if(!word.empty()) 
-        {
+       {
           if(stop_words.isStopWord(word)) 
             {
               word.clear();
@@ -75,30 +74,76 @@ void Analysis(){
     if(!(*ch))
     {
       printf("File number: %d\n",counter);
-      counter++;
       Tree_1 *tre = createTree();
       Tree_AVL *avl = createTree_AVL();
+     // Forest *F = (Forest *)malloc(sizeof(Forest));
+     // F->huf = (Huffman*)malloc(20 * sizeof(Huffman));
+      Item I;
+      I.word = (char*)malloc(50 * sizeof(char));
 
       FillingHeap(Heapp,mp);
  
       //in here filling all trees
       FillingBasicTree(Heapp,&tre);
 
-      printf("METODO CENTRAL: { ");                                                                
-          central(tre);
-
-          printf("}\n\n"); 
-
       FillingAvl(Heapp,&avl);
 
-       printf("METODO CENTRAL PARA AVL: { ");                                                                
-          central_AVL(avl);
+      Huffman *huf = CreateHuffman();
+      Huffman *huftwo = CreateHuffman();
+      Huffman *hufthree = CreateHuffman();
+      Huffman *huffor = CreateHuffman();
 
-          printf("}\n\n"); 
+      I.frequence = 5;
+      I.controle = 0;
+      strcpy(I.word,"teste");
+      InsertHuffman(&huf,I);
 
+      I.frequence = 25;
+      I.controle = 0;
+      strcpy(I.word,"testetwo");
+      InsertHuffman(&huftwo,I);
 
+      I.frequence = 1;
+      I.controle = 0;
+      strcpy(I.word,"testethree");
+      InsertHuffman(&hufthree,I);
+
+      I.frequence = 18;
+      I.controle = 0;
+      strcpy(I.word,"teste");
+      InsertHuffman(&huffor,I);
+
+      vector<Huffman*> vec;
+
+      vec.push_back(huf);
+      vec.push_back(huffor);
+      vec.push_back(huftwo);
+      vec.push_back(hufthree);
+
+      ConstructHuffman(vec);
+      vec.clear();
+
+     // F->huf[0] = *huf;
+     /// F->huf[1] = *huftwo;
+
+     /* F->quantity = 0;
+      F->quantity++;
+      F->quantity++;
+*/
+     // ConstructHuffman(&F);
+
+     /* printf("METODO CENTRAL PARA AVL: { ");                                                                
+      central_AVL(avl);
+
+      printf("}\n\n"); 
+*/
       //in here add the print of the heap.
-      printEnd(Heapp,output);
+
+      PrintEnd(output,Heapp,counter,&tre);
+      counter++;
+      central(&tre,output);
+
+      output << "======================================================================================================================================\n";
 
       if(counter < 7){
 

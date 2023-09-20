@@ -1,4 +1,6 @@
 #include "Tree.hpp"
+#include <cstdlib>
+
 
 Tree_1 *createTree() {
 	return NULL;
@@ -13,7 +15,7 @@ void freeRaiz_1(Tree_1 *tre) {
 }
 
 void insertItem(Tree_1 **tre, Record_1 r) {
-	if (*tre == NULL) {
+  if (*tre == NULL) {
 		*tre = (Tree_1 *)malloc(sizeof(Tree_1));
 		(*tre)->esq = NULL;
 		(*tre)->dir = NULL;
@@ -28,8 +30,8 @@ void insertItem(Tree_1 **tre, Record_1 r) {
 			insertItem(&(*tre)->dir, r);}
 		else{
 			(*tre)->reg.palavras[(*tre)->reg.quantity].palavra = (char *)malloc(40*sizeof(char));
-			(*tre)->reg.palavras[(*tre)->reg.quantity].palavra = r.key;
-		    (*tre)->reg.quantity++;
+            (*tre)->reg.palavras[(*tre)->reg.quantity].palavra = r.key;
+            (*tre)->reg.quantity++;
 
 		}
 	}
@@ -43,17 +45,22 @@ void preordem(Tree_1 *tre) {
 	}
 }
 
-void central(Tree_1 *tre,std::wofstream &output) {
- 
-  if (!(tre == NULL)) {
-    central(tre->esq,output);
-    cout << tre->reg.key << "-";
-	for(int i = 0 ; i < tre->reg.quantity ; i++)
-	{
-		cout << tre->reg.palavras[i].palavra << " ";
-	} 
-    central(tre->dir,output);
+void central(Tree_1 **tre,std::ofstream &output) {
+  
+
+  if (!((*tre) == NULL)) {
+    central(&(*tre)->esq,output);
+    
+	output << (*tre)->reg.key << " " << (*tre)->reg.value << "\n";
+	
+	for(int i = 0 ; i < (*tre)->reg.quantity ; i++)	
+        {
+            output << (*tre)->reg.palavras[i].palavra << "-" << (*tre)->reg.value << "\n";
+		}
+		 
+        central(&(*tre)->dir,output);
 	}
+	
 }
 
 void posordem(Tree_1 *tre) {
@@ -64,7 +71,7 @@ void posordem(Tree_1 *tre) {
 	}
 }
 
-void FillingBasicTree(Vector &Heapp,Tree_1 **tre ){
+void FillingBasicTree(Vector &Heapp, Tree_1 **tre){
 
   Record_1 rec;
   string aux_conv_strin;

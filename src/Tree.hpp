@@ -10,6 +10,8 @@
 #include <string>
 #include <cstring>
 #include<vector>
+#include <fstream>
+#include <locale>
 
 using namespace std;
 
@@ -19,7 +21,7 @@ typedef struct Palavras_B Palavras_B;
 
 struct Palavras_B
 {
-	char *palavra;
+    char *palavra;
 };
 
 
@@ -44,7 +46,7 @@ void removeItem(Tree_1 **tre, Record_1 r);
 void freeRaiz_1(Tree_1 *tre);
 
 void preordem(Tree_1 *tre);
-void central(Tree_1 *tre,std::wofstream &output);
+void central(Tree_1 **tre,std::ofstream &output);
 void posordem(Tree_1 *tre);
 
 void FillingBasicTree(Vector &Heapp,Tree_1 **tre );

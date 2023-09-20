@@ -39,40 +39,35 @@ wchar_t *getText(const std::locale &loc,int counter)
   return buffer;
 }
 
+void PrintEnd(std::ofstream &output, Vector &Heapp,int counter,Tree_1 **tre){
+        output << "File"<< "\t\t\t|"<< "Palavra" << "\t\t\t|" << "Contagem de frequencia no texto" <<  "\t|" << " Heap \t\t\t\t\t|" << "Árvore simples \t\t\t\t|" <<"\n";
+        output << counter;
+
+
+        for(int i = 0 ; i < MAXSIZE ; i++) {
+
+          string str(Heapp.vet[i].value.begin(),Heapp.vet[i].value.end());
+          output << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" << str << "\t"<< Heapp.vet[i].frequence << "\n";
+        }
+
+}
+
+
 //this function print the result for user
-void printEnd(Vector &Heapp, std::wofstream &output)
-{
+std::ofstream createOutput() {
+        
+        string path;
 
-  output << L"File"<< L"\t\t\t|"<< L"Palavra" << L"\t\t\t|" << L"Contagem de frequencia no texto" <<  L"\t\t\t|" << L"\n";
+        path.insert(0, "./dataset/output.data");
 
+	ofstream output(path);
 
-   for(int i = 0 ; i < MAXSIZE ; i++) {
-
-      output << L"\t\t\t\t" << Heapp.vet[i].value << L"\t\t\t\t"<< Heapp.vet[i].frequence << L"\n";
-   }
-
-
-   output << L"======================================================================================================================================\n";
+	if (!(output.is_open())) {
+          printf("is not possible open the file");
+        }
+          return output;
+        
 }
 
-std::wofstream createOutput(const std::locale &loc)
-{
-  wofstream output("./dataset/output.data");
 
-  if(!output.is_open()) {
-    wcout << L"Não foi possível abrir o arquivo \"./dataset/output.data\"" << endl;
-    exit(1);
-  }
 
-  output.imbue(loc);
-
-  return output;
-}
-
-void printStart(std::wofstream &output)
-{
-	output << L"======================================================================================================================================\n"
-					  L"=>                                                    ### START PROCESS ###\n"
-	          L"======================================================================================================================================\n"
-            L"\n";
-}

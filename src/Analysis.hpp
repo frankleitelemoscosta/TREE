@@ -13,6 +13,7 @@
 #include"StopWords.hpp"
 #include"Tree.hpp"
 #include"Avl.hpp"
+#include"Huffman.hpp"
 
 using namespace std;
 

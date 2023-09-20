@@ -1,136 +1,252 @@
+File			|Palavra			|Contagem de frequencia no texto	| Heap 					|Árvore simples 				|
+1																	wittgenstein	95
+																	segundo	114
+																	maneira	95
+																	pensamento	115
+																	pode	114
+																	imanente	104
+																	quanto	95
+																	mundo	134
+																	priori	125
+																	sistema	115
+																	sobre	114
+																	sentido	110
+																	social	107
+																	vista	96
+																	�	96
+																	teoria	176
+																	sujeito	145
+																	condi��o	134
+																	modo	129
+																	deve	115
+wittgenstein 95
+maneira-95
+quanto-95
+vista 96
+É-96
+imanente 104
+social 107
+sentido 110
+segundo 114
+pode-114
+sobre-114
+pensamento 115
+sistema-115
+deve-115
+priori 125
+modo 129
+mundo 134
+condição-134
+sujeito 145
+teoria 176
 ======================================================================================================================================
-=>                                                    ### START PROCESS ###
+File			|Palavra			|Contagem de frequencia no texto	| Heap 					|Árvore simples 				|
+2																	�	95
+																	deve	114
+																	poss�vel	95
+																	sistema	119
+																	segundo	114
+																	social	106
+																	maneira	95
+																	priori	144
+																	modo	129
+																	pode	115
+																	sobre	114
+																	sentido	111
+																	imanente	109
+																	princ�pio	97
+																	wittgenstein	95
+																	teoria	192
+																	sujeito	149
+																	mundo	144
+																	condi��o	133
+																	pensamento	115
+É 95
+possível-95
+maneira-95
+wittgenstein-95
+princípio 97
+social 106
+imanente 109
+sentido 111
+deve 114
+segundo-114
+sobre-114
+pode 115
+pensamento-115
+sistema 119
+modo 129
+condição 133
+priori 144
+mundo-144
+sujeito 149
+teoria 192
 ======================================================================================================================================
-
-File			|Palavra			|Contagem de frequencia no texto			|
-				wittgenstein				95
-				segundo				114
-				maneira				95
-				pensamento				115
-				pode				114
-				imanente				104
-				quanto				95
-				mundo				134
-				priori				125
-				sistema				115
-				sobre				114
-				sentido				110
-				social				107
-				vista				96
-				É				96
-				teoria				176
-				sujeito				145
-				condição				134
-				modo				129
-				deve				115
+File			|Palavra			|Contagem de frequencia no texto	| Heap 					|Árvore simples 				|
+3																	geral	134
+																	prazo	134
+																	sistema	134
+																	sentido	200
+																	processo	198
+																	�	134
+																	forma��o	134
+																	sa�de	201
+																	atual	201
+																	eleitores	199
+																	pol�tica	198
+																	educa��o	134
+																	longo	134
+																	impacto	134
+																	import�ncia	134
+																	pol�tico	400
+																	pol�ticas	267
+																	melhoria	201
+																	assim	201
+																	metas	199
+geral 134
+prazo-134
+sistema-134
+É-134
+formação-134
+educação-134
+longo-134
+impacto-134
+importância-134
+processo 198
+política-198
+eleitores 199
+metas-199
+sentido 200
+saúde 201
+atual-201
+melhoria-201
+assim-201
+políticas 267
+político 400
 ======================================================================================================================================
-File			|Palavra			|Contagem de frequencia no texto			|
-				É				95
-				deve				114
-				possível				95
-				sistema				119
-				segundo				114
-				social				106
-				maneira				95
-				priori				144
-				modo				129
-				pode				115
-				sobre				114
-				sentido				111
-				imanente				109
-				princípio				97
-				wittgenstein				95
-				teoria				192
-				sujeito				149
-				mundo				144
-				condição				133
-				pensamento				115
+File			|Palavra			|Contagem de frequencia no texto	| Heap 					|Árvore simples 				|
+4																	forma��o	133
+																	melhoria	134
+																	importante	133
+																	formas	134
+																	estabelecimento	134
+																	pode	134
+																	condi��es	133
+																	assim	199
+																	sistema	134
+																	podemos	134
+																	modo	134
+																	informa��es	134
+																	impacto	134
+																	�	134
+																	determina��o	133
+																	processo	200
+																	sentido	200
+																	necessidade	134
+																	quadros	134
+																	import�ncia	134
+formação 133
+importante-133
+condições-133
+determinação-133
+melhoria 134
+formas-134
+estabelecimento-134
+pode-134
+sistema-134
+podemos-134
+modo-134
+informações-134
+impacto-134
+É-134
+necessidade-134
+quadros-134
+importância-134
+assim 199
+processo 200
+sentido-200
 ======================================================================================================================================
-File			|Palavra			|Contagem de frequencia no texto			|
-				geral				134
-				prazo				134
-				sistema				134
-				sentido				200
-				processo				198
-				É				134
-				formação				134
-				saúde				201
-				atual				201
-				eleitores				199
-				política				198
-				educação				134
-				longo				134
-				impacto				134
-				importância				134
-				político				400
-				políticas				267
-				melhoria				201
-				assim				201
-				metas				199
+File			|Palavra			|Contagem de frequencia no texto	| Heap 					|Árvore simples 				|
+5																	sistemas	134
+																	melhor	200
+																	integridade	134
+																	informa��es	201
+																	sistema	200
+																	tempo	199
+																	problemas	134
+																	implanta��o	266
+																	dados	201
+																	impacto	200
+																	desenvolvimento	200
+																	assim	199
+																	hardware	199
+																	software	134
+																	causa	134
+																	utiliza��o	399
+																	seguran�a	268
+																	ti	201
+																	novas	201
+																	aumento	200
+sistemas 134
+integridade-134
+problemas-134
+software-134
+causa-134
+tempo 199
+assim-199
+hardware-199
+melhor 200
+sistema-200
+impacto-200
+desenvolvimento-200
+aumento-200
+informações 201
+dados-201
+ti-201
+novas-201
+implantação 266
+segurança 268
+utilização 399
 ======================================================================================================================================
-File			|Palavra			|Contagem de frequencia no texto			|
-				formação				133
-				melhoria				134
-				importante				133
-				formas				134
-				estabelecimento				134
-				pode				134
-				condições				133
-				assim				199
-				sistema				134
-				podemos				134
-				modo				134
-				informações				134
-				impacto				134
-				É				134
-				determinação				133
-				processo				200
-				sentido				200
-				necessidade				134
-				quadros				134
-				importância				134
-======================================================================================================================================
-File			|Palavra			|Contagem de frequencia no texto			|
-				sistemas				134
-				melhor				200
-				integridade				134
-				informações				201
-				sistema				200
-				tempo				199
-				problemas				134
-				implantação				266
-				dados				201
-				impacto				200
-				desenvolvimento				200
-				assim				199
-				hardware				199
-				software				134
-				causa				134
-				utilização				399
-				segurança				268
-				ti				201
-				novas				201
-				aumento				200
-======================================================================================================================================
-File			|Palavra			|Contagem de frequencia no texto			|
-				serviços				134
-				impacto				199
-				necessidade				134
-				assim				201
-				novas				199
-				sistema				199
-				sentido				134
-				implantação				267
-				melhor				201
-				informações				200
-				hardware				200
-				tempo				199
-				desenvolvimento				199
-				dúvidas				134
-				existem				134
-				utilização				400
-				segurança				268
-				dados				201
-				ti				201
-				aumento				201
+File			|Palavra			|Contagem de frequencia no texto	| Heap 					|Árvore simples 				|
+6																	servi�os	134
+																	impacto	199
+																	necessidade	134
+																	assim	201
+																	novas	199
+																	sistema	199
+																	sentido	134
+																	implanta��o	267
+																	melhor	201
+																	informa��es	200
+																	hardware	200
+																	tempo	199
+																	desenvolvimento	199
+																	d�vidas	134
+																	existem	134
+																	utiliza��o	400
+																	seguran�a	268
+																	dados	201
+																	ti	201
+																	aumento	201
+serviços 134
+necessidade-134
+sentido-134
+dúvidas-134
+existem-134
+impacto 199
+novas-199
+sistema-199
+tempo-199
+desenvolvimento-199
+informações 200
+hardware-200
+assim 201
+melhor-201
+dados-201
+ti-201
+aumento-201
+implantação 267
+segurança 268
+utilização 400
 ======================================================================================================================================
