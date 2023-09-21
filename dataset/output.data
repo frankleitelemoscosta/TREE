@@ -1,25 +1,38 @@
-File			|Palavra			|Contagem de frequencia no texto	| Heap 					|√Årvore simples 				|
-1																	wittgenstein	95
-																	segundo	114
-																	maneira	95
-																	pensamento	115
-																	pode	114
-																	imanente	104
-																	quanto	95
-																	mundo	134
-																	priori	125
-																	sistema	115
-																	sobre	114
-																	sentido	110
-																	social	107
-																	vista	96
-																	…	96
-																	teoria	176
-																	sujeito	145
-																	condiÁ„o	134
-																	modo	129
-																	deve	115
-wittgenstein 95
+FILE:
+
+1
+WORD:
+
+
+ FREQUENCIA NO TEXTO:
+
+ 
+ HEAP:
+
+ wittgenstein				95
+segundo			114
+maneira			95
+pensamento				115
+pode			114
+imanente				104
+quanto			95
+mundo			134
+priori			125
+sistema			115
+sobre			114
+sentido			110
+social			107
+vista			96
+…			96
+teoria			176
+sujeito			145
+condiÁ„o				134
+modo			129
+deve			115
+
+SIMPLE TREE:
+
+ wittgenstein 95
 maneira-95
 quanto-95
 vista 96
@@ -39,29 +52,88 @@ mundo 134
 condi√ß√£o-134
 sujeito 145
 teoria 176
+
+AVL TREE:
+
+wittgenstein				95
+maneira				
+quanto				
+vista			96
+√â			
+imanente				104
+social			107
+sentido			110
+segundo			114
+pode			
+sobre			
+pensamento				115
+sistema				
+deve				
+priori			125
+modo			129
+mundo			134
+condi√ß√£o			
+sujeito			145
+teoria			176
+
+HUFFMAN:
+
+114
+114
+114
+115
+115
+115
+125
+129
+134
+134
+145
+176
+95
+95
+95
+96
+96
+104
+107
+110
 ======================================================================================================================================
-File			|Palavra			|Contagem de frequencia no texto	| Heap 					|√Årvore simples 				|
-2																	…	95
-																	deve	114
-																	possÌvel	95
-																	sistema	119
-																	segundo	114
-																	social	106
-																	maneira	95
-																	priori	144
-																	modo	129
-																	pode	115
-																	sobre	114
-																	sentido	111
-																	imanente	109
-																	princÌpio	97
-																	wittgenstein	95
-																	teoria	192
-																	sujeito	149
-																	mundo	144
-																	condiÁ„o	133
-																	pensamento	115
-√â 95
+FILE:
+
+2
+WORD:
+
+
+ FREQUENCIA NO TEXTO:
+
+ 
+ HEAP:
+
+ …			95
+deve			114
+possÌvel				95
+sistema			119
+segundo			114
+social			106
+maneira			95
+priori			144
+modo			129
+pode			115
+sobre			114
+sentido			111
+imanente				109
+princÌpio				97
+wittgenstein				95
+teoria			192
+sujeito			149
+mundo			144
+condiÁ„o				133
+pensamento				115
+
+SIMPLE TREE:
+
+ √â 95
 poss√≠vel-95
 maneira-95
 wittgenstein-95
@@ -81,29 +153,88 @@ priori 144
 mundo-144
 sujeito 149
 teoria 192
+
+AVL TREE:
+
+√â			95
+poss√≠vel			
+maneira			
+wittgenstein			
+princ√≠pio				97
+social			106
+imanente				109
+sentido			111
+deve			114
+segundo			
+sobre			
+pode			115
+pensamento			
+sistema			119
+modo			129
+condi√ß√£o				133
+priori			144
+mundo			
+sujeito			149
+teoria			192
+
+HUFFMAN:
+
+114
+114
+114
+115
+115
+119
+129
+133
+144
+144
+149
+95
+95
+95
+95
+192
+97
+106
+109
+111
 ======================================================================================================================================
-File			|Palavra			|Contagem de frequencia no texto	| Heap 					|√Årvore simples 				|
-3																	geral	134
-																	prazo	134
-																	sistema	134
-																	sentido	200
-																	processo	198
-																	…	134
-																	formaÁ„o	134
-																	sa˙de	201
-																	atual	201
-																	eleitores	199
-																	polÌtica	198
-																	educaÁ„o	134
-																	longo	134
-																	impacto	134
-																	import‚ncia	134
-																	polÌtico	400
-																	polÌticas	267
-																	melhoria	201
-																	assim	201
-																	metas	199
-geral 134
+FILE:
+
+3
+WORD:
+
+
+ FREQUENCIA NO TEXTO:
+
+ 
+ HEAP:
+
+ geral			134
+prazo			134
+sistema			134
+sentido			200
+processo				198
+…			134
+formaÁ„o				134
+sa˙de			201
+atual			201
+eleitores				199
+polÌtica				198
+educaÁ„o				134
+longo			134
+impacto			134
+import‚ncia				134
+polÌtico				400
+polÌticas				267
+melhoria				201
+assim			201
+metas			199
+
+SIMPLE TREE:
+
+ geral 134
 prazo-134
 sistema-134
 √â-134
@@ -123,29 +254,88 @@ melhoria-201
 assim-201
 pol√≠ticas 267
 pol√≠tico 400
+
+AVL TREE:
+
+geral			134
+prazo			
+sistema			
+√â			
+forma√ß√£o			
+educa√ß√£o			
+longo			
+impacto			
+import√¢ncia			
+processo				198
+pol√≠tica				
+eleitores				199
+metas				
+sentido			200
+sa√∫de			201
+atual			
+melhoria			
+assim			
+pol√≠ticas				267
+pol√≠tico				400
+
+HUFFMAN:
+
+198
+199
+199
+200
+400
+201
+201
+201
+201
+267
+134
+134
+134
+134
+134
+134
+134
+134
+134
+198
 ======================================================================================================================================
-File			|Palavra			|Contagem de frequencia no texto	| Heap 					|√Årvore simples 				|
-4																	formaÁ„o	133
-																	melhoria	134
-																	importante	133
-																	formas	134
-																	estabelecimento	134
-																	pode	134
-																	condiÁıes	133
-																	assim	199
-																	sistema	134
-																	podemos	134
-																	modo	134
-																	informaÁıes	134
-																	impacto	134
-																	…	134
-																	determinaÁ„o	133
-																	processo	200
-																	sentido	200
-																	necessidade	134
-																	quadros	134
-																	import‚ncia	134
-forma√ß√£o 133
+FILE:
+
+4
+WORD:
+
+
+ FREQUENCIA NO TEXTO:
+
+ 
+ HEAP:
+
+ formaÁ„o				133
+melhoria				134
+importante				133
+formas			134
+estabelecimento				134
+pode			134
+condiÁıes				133
+assim			199
+sistema			134
+podemos			134
+modo			134
+informaÁıes				134
+impacto			134
+…			134
+determinaÁ„o				133
+processo				200
+sentido			200
+necessidade				134
+quadros			134
+import‚ncia				134
+
+SIMPLE TREE:
+
+ forma√ß√£o 133
 importante-133
 condi√ß√µes-133
 determina√ß√£o-133
@@ -165,29 +355,88 @@ import√¢ncia-134
 assim 199
 processo 200
 sentido-200
+
+AVL TREE:
+
+forma√ß√£o				133
+importante				
+condi√ß√µes				
+determina√ß√£o				
+melhoria				134
+formas				
+estabelecimento				
+pode				
+sistema				
+podemos				
+modo				
+informa√ß√µes				
+impacto				
+√â				
+necessidade				
+quadros				
+import√¢ncia				
+assim			199
+processo				200
+sentido				
+
+HUFFMAN:
+
+134
+134
+134
+134
+134
+134
+134
+134
+134
+199
+200
+200
+133
+133
+133
+133
+134
+134
+134
+134
 ======================================================================================================================================
-File			|Palavra			|Contagem de frequencia no texto	| Heap 					|√Årvore simples 				|
-5																	sistemas	134
-																	melhor	200
-																	integridade	134
-																	informaÁıes	201
-																	sistema	200
-																	tempo	199
-																	problemas	134
-																	implantaÁ„o	266
-																	dados	201
-																	impacto	200
-																	desenvolvimento	200
-																	assim	199
-																	hardware	199
-																	software	134
-																	causa	134
-																	utilizaÁ„o	399
-																	seguranÁa	268
-																	ti	201
-																	novas	201
-																	aumento	200
-sistemas 134
+FILE:
+
+5
+WORD:
+
+
+ FREQUENCIA NO TEXTO:
+
+ 
+ HEAP:
+
+ sistemas				134
+melhor			200
+integridade				134
+informaÁıes				201
+sistema			200
+tempo			199
+problemas				134
+implantaÁ„o				266
+dados			201
+impacto			200
+desenvolvimento				200
+assim			199
+hardware				199
+software				134
+causa			134
+utilizaÁ„o				399
+seguranÁa				268
+ti			201
+novas			201
+aumento			200
+
+SIMPLE TREE:
+
+ sistemas 134
 integridade-134
 problemas-134
 software-134
@@ -207,29 +456,88 @@ novas-201
 implanta√ß√£o 266
 seguran√ßa 268
 utiliza√ß√£o 399
+
+AVL TREE:
+
+sistemas				134
+integridade				
+problemas				
+software				
+causa				
+tempo			199
+assim			
+hardware			
+melhor			200
+sistema			
+impacto			
+desenvolvimento			
+aumento			
+informa√ß√µes				201
+dados				
+ti				
+novas				
+implanta√ß√£o				266
+seguran√ßa				268
+utiliza√ß√£o				399
+
+HUFFMAN:
+
+200
+200
+200
+200
+200
+201
+201
+201
+201
+266
+268
+134
+134
+134
+134
+134
+199
+199
+199
+399
 ======================================================================================================================================
-File			|Palavra			|Contagem de frequencia no texto	| Heap 					|√Årvore simples 				|
-6																	serviÁos	134
-																	impacto	199
-																	necessidade	134
-																	assim	201
-																	novas	199
-																	sistema	199
-																	sentido	134
-																	implantaÁ„o	267
-																	melhor	201
-																	informaÁıes	200
-																	hardware	200
-																	tempo	199
-																	desenvolvimento	199
-																	d˙vidas	134
-																	existem	134
-																	utilizaÁ„o	400
-																	seguranÁa	268
-																	dados	201
-																	ti	201
-																	aumento	201
-servi√ßos 134
+FILE:
+
+6
+WORD:
+
+
+ FREQUENCIA NO TEXTO:
+
+ 
+ HEAP:
+
+ serviÁos				134
+impacto			199
+necessidade				134
+assim			201
+novas			199
+sistema			199
+sentido			134
+implantaÁ„o				267
+melhor			201
+informaÁıes				200
+hardware				200
+tempo			199
+desenvolvimento				199
+d˙vidas			134
+existem			134
+utilizaÁ„o				400
+seguranÁa				268
+dados			201
+ti			201
+aumento			201
+
+SIMPLE TREE:
+
+ servi√ßos 134
 necessidade-134
 sentido-134
 d√∫vidas-134
@@ -249,4 +557,50 @@ aumento-201
 implanta√ß√£o 267
 seguran√ßa 268
 utiliza√ß√£o 400
+
+AVL TREE:
+
+servi√ßos				134
+necessidade				
+sentido				
+d√∫vidas				
+existem				
+impacto			199
+novas			
+sistema			
+tempo			
+desenvolvimento			
+informa√ß√µes				200
+hardware				
+assim			201
+melhor			
+dados			
+ti			
+aumento			
+implanta√ß√£o				267
+seguran√ßa				268
+utiliza√ß√£o				400
+
+HUFFMAN:
+
+400
+200
+200
+201
+201
+201
+201
+201
+267
+268
+134
+134
+134
+134
+134
+199
+199
+199
+199
+199
 ======================================================================================================================================

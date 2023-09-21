@@ -8,6 +8,7 @@
 #include"Heap.hpp"
 #include<codecvt>
 #include<string>
+#include<fstream>
 
 using namespace std;
 
@@ -31,9 +32,9 @@ struct Huffman{
 	
 
 bool SizeCompare(Huffman *a,Huffman *b);
-void Preordem(Huffman *H);
-void ConstructHuffman(vector<Huffman*> &H);
-void FillingHuffman(Vector &Heapp);
+void Preordem(Huffman *H,std::ofstream &output);
+void ConstructHuffman(vector<Huffman*> &H,std::ofstream &output);
+void FillingHuffman(Vector &Heapp,std::ofstream &output);
 Huffman *CreateHuffman();
 void InsertHuffman(Huffman **H,Item I);
 

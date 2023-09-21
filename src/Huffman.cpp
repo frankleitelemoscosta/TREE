@@ -20,7 +20,7 @@ void InsertHuffman(Huffman **H,Item I)
 	strcpy((*H)->item.word,I.word);
 }
 
-void FillingHuffman(Vector &Heapp)
+void FillingHuffman(Vector &Heapp,std::ofstream &output)
 {
   Item I;
   Huffman *huf = CreateHuffman();
@@ -48,10 +48,10 @@ void FillingHuffman(Vector &Heapp)
 
     free(I.word);
   }
-  ConstructHuffman(vec);
+  ConstructHuffman(vec,output);
 }
 
-void ConstructHuffman(vector<Huffman*> &H)
+void ConstructHuffman(vector<Huffman*> &H,std::ofstream &output)
 {
     for(int i = 0; i < H.size() ; i++)
     {
@@ -80,19 +80,19 @@ void ConstructHuffman(vector<Huffman*> &H)
 
 	}
 
-	Preordem(H[0]);
+	Preordem(H[0],output);
 	cout<<endl;
 
 }
 
-void Preordem(Huffman *H)
+void Preordem(Huffman *H,std::ofstream &output)
 {
 	if(H != NULL)
 	{
-		if(H->item.controle != 1) {cout << H->item.frequence<<endl;}
+		if(H->item.controle != 1) {output << H->item.frequence<<endl;}
 		
 		//cout << H->item.controle << " "<< H->item.frequence<<endl;
-		Preordem(H->left);
-		Preordem(H->right);
+		Preordem(H->left,output);
+		Preordem(H->right,output);
 	}
 }

@@ -59,31 +59,26 @@ void rebalancear_AVL(Tree_AVL **t) {
 	}
 }
 
-void preordem_AVL(Tree_AVL *t) {
-	if (!(t == NULL)) {
-		cout << t->item.key <<endl;
-                preordem_AVL(t->esq);
-		preordem_AVL(t->dir);
-	}
-}
+void central_AVL(Tree_AVL *t,std::ofstream &output) {
+	
 
-void central_AVL(Tree_AVL *t) {
 	if (!(t == NULL)) {
-		central_AVL(t->esq);
-		cout << t->item.key << "-";
+		central_AVL(t->esq,output);
+		string str(t->item.key);
+		output << str << (str.length() < 8 ? "\t\t\t" :
+                str.length() < 16 ? "\t\t\t\t" :
+                str.length() < 24 ? "\t\t\t\t\t\t\t\t" :
+                str.length() < 32 ? "\t\t\t\t\t\t\t" :
+                "\t") << t->item.value << "\n";
 	        for(int i = 0 ; i < t->item.quantity ; i++)
 	        {
-	  	    cout << t->item.palavras[i].palavra << " ";
-	        }cout << "\n";
-                central_AVL(t->dir);
-	}
-}
-
-void posordem_AVL(Tree_AVL *t) {
-	if (!(t == NULL)) {
-		preordem_AVL(t->esq);
-		preordem_AVL(t->dir);
-		cout << t->item.key <<endl;
+	  	    output << t->item.palavras[i].palavra <<  (str.length() < 8 ? "\t\t\t" :
+                str.length() < 16 ? "\t\t\t\t" :
+                str.length() < 24 ? "\t\t\t\t\t\t\t\t" :
+                str.length() < 32 ? "\t\t\t\t\t\t\t" :
+                "\t") << "\n";
+	        }
+                central_AVL(t->dir,output);
 	}
 }
 

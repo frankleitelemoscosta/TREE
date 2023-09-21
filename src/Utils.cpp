@@ -40,15 +40,20 @@ wchar_t *getText(const std::locale &loc,int counter)
 }
 
 void PrintEnd(std::ofstream &output, Vector &Heapp,int counter,Tree_1 **tre){
-        output << "File"<< "\t\t\t|"<< "Palavra" << "\t\t\t|" << "Contagem de frequencia no texto" <<  "\t|" << " Heap \t\t\t\t\t|" << "Árvore simples \t\t\t\t|" <<"\n";
-        output << counter;
+        output << "FILE" << ":\n\n" << counter << "\n" << "WORD:\n\n" << "\n " << "FREQUENCIA NO TEXTO:\n\n " <<  "\n" << " HEAP:\n\n "  ;
 
 
         for(int i = 0 ; i < MAXSIZE ; i++) {
 
           string str(Heapp.vet[i].value.begin(),Heapp.vet[i].value.end());
-          output << "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t" << str << "\t"<< Heapp.vet[i].frequence << "\n";
+          output << str <<  (str.length() < 8 ? "\t\t\t" :
+                str.length() < 16 ? "\t\t\t\t" :
+                str.length() < 24 ? "\t\t\t\t\t\t\t\t" :
+                str.length() < 32 ? "\t\t\t\t\t\t\t" :
+                "\t") << Heapp.vet[i].frequence << "\n";
         }
+
+	output << "\nSIMPLE TREE:\n\n ";
 
 }
 

@@ -84,19 +84,19 @@ void Analysis(){
 
       FillingAvl(Heapp,&avl);
 
-      FillingHuffman(Heapp);
-
-     /* printf("METODO CENTRAL PARA AVL: { ");                                                                
-      central_AVL(avl);
-
-      printf("}\n\n"); 
-*/
       //in here add the print of the heap.
 
       PrintEnd(output,Heapp,counter,&tre);
       counter++;
       central(&tre,output);
 
+      output << "\nAVL TREE:\n\n";
+
+      central_AVL(avl,output);
+    
+      output << "\nHUFFMAN:\n\n";
+      FillingHuffman(Heapp,output);
+      
       output << "======================================================================================================================================\n";
 
       if(counter < 7){

@@ -8,7 +8,7 @@
 #include <string>
 #include<iostream>
 #include <cstring>
-
+#include <fstream>
 using namespace std;
 
 typedef struct Record_AVL Record_AVL;
@@ -37,11 +37,7 @@ struct Tree_AVL {
 Tree_AVL *createTree_AVL();
 
 void insertItem_AVL(Tree_AVL **t, Record_AVL r);
-void removeItem_AVL(Tree_AVL **t, Tree_AVL **f, Record_AVL item);
-
-void preordem_AVL(Tree_AVL *t);
-void central_AVL(Tree_AVL *t);
-void posordem_AVL(Tree_AVL *t);
+void central_AVL(Tree_AVL *t,std::ofstream &output);
 
 int getPeso(Tree_AVL **t);
 int getMaxPeso(int left, int right);
