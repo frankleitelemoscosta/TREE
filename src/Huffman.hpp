@@ -5,6 +5,9 @@
 #include<string.h>
 #include<vector>
 #include<algorithm>
+#include"Heap.hpp"
+#include<codecvt>
+#include<string>
 
 using namespace std;
 
@@ -30,6 +33,7 @@ struct Huffman{
 bool SizeCompare(Huffman *a,Huffman *b);
 void Preordem(Huffman *H);
 void ConstructHuffman(vector<Huffman*> &H);
+void FillingHuffman(Vector &Heapp);
 Huffman *CreateHuffman();
 void InsertHuffman(Huffman **H,Item I);
 

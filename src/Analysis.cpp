@@ -76,10 +76,6 @@ void Analysis(){
       printf("File number: %d\n",counter);
       Tree_1 *tre = createTree();
       Tree_AVL *avl = createTree_AVL();
-     // Forest *F = (Forest *)malloc(sizeof(Forest));
-     // F->huf = (Huffman*)malloc(20 * sizeof(Huffman));
-      Item I;
-      I.word = (char*)malloc(50 * sizeof(char));
 
       FillingHeap(Heapp,mp);
  
@@ -88,49 +84,7 @@ void Analysis(){
 
       FillingAvl(Heapp,&avl);
 
-      Huffman *huf = CreateHuffman();
-      Huffman *huftwo = CreateHuffman();
-      Huffman *hufthree = CreateHuffman();
-      Huffman *huffor = CreateHuffman();
-
-      I.frequence = 5;
-      I.controle = 0;
-      strcpy(I.word,"teste");
-      InsertHuffman(&huf,I);
-
-      I.frequence = 25;
-      I.controle = 0;
-      strcpy(I.word,"testetwo");
-      InsertHuffman(&huftwo,I);
-
-      I.frequence = 1;
-      I.controle = 0;
-      strcpy(I.word,"testethree");
-      InsertHuffman(&hufthree,I);
-
-      I.frequence = 18;
-      I.controle = 0;
-      strcpy(I.word,"teste");
-      InsertHuffman(&huffor,I);
-
-      vector<Huffman*> vec;
-
-      vec.push_back(huf);
-      vec.push_back(huffor);
-      vec.push_back(huftwo);
-      vec.push_back(hufthree);
-
-      ConstructHuffman(vec);
-      vec.clear();
-
-     // F->huf[0] = *huf;
-     /// F->huf[1] = *huftwo;
-
-     /* F->quantity = 0;
-      F->quantity++;
-      F->quantity++;
-*/
-     // ConstructHuffman(&F);
+      FillingHuffman(Heapp);
 
      /* printf("METODO CENTRAL PARA AVL: { ");                                                                
       central_AVL(avl);

@@ -20,6 +20,37 @@ void InsertHuffman(Huffman **H,Item I)
 	strcpy((*H)->item.word,I.word);
 }
 
+void FillingHuffman(Vector &Heapp)
+{
+  Item I;
+  Huffman *huf = CreateHuffman();
+  char *aux_conv_cha;
+  string aux_conv_strin;
+  wstring_convert<codecvt_utf8<wchar_t>> converter;
+  vector<Huffman*> vec;
+
+
+  for(auto H : Heapp.vet)
+  {
+    I.word = (char*)malloc(50 * sizeof(char));
+
+    aux_conv_strin = converter.to_bytes(H.value);
+    aux_conv_cha = (char*)malloc((aux_conv_strin.length() + 1)*sizeof(char));
+    strcpy(aux_conv_cha, aux_conv_strin.c_str());
+
+
+    I.word = aux_conv_cha;
+    I.frequence = H.frequence;
+
+    InsertHuffman(&huf,I);
+
+    vec.push_back(huf);
+
+    free(I.word);
+  }
+  ConstructHuffman(vec);
+}
+
 void ConstructHuffman(vector<Huffman*> &H)
 {
     for(int i = 0; i < H.size() ; i++)
@@ -34,29 +65,12 @@ void ConstructHuffman(vector<Huffman*> &H)
 		//cout << H[0]->item.frequence<< " "<< H[1]->item.frequence <<" "<<H.size()<<endl;
 		Huffman *left = H[0];
 		Huffman *Rigth = H[1];
-		bool key = false;
-		bool keytwo = false;
-		/*item.frequence = left->item.frequence + Rigth->item.frequence;
-		item.word = (char*)malloc(20 * sizeof(char));
-		strcpy(item.word,"$");*/
-		//Huffman *aux = CreateHuffman();
 		Huffman *aux = (Huffman*)malloc(sizeof(Huffman));
-		//InsertHuffman(&aux,item);
-		if(left->item.controle == 0)
-		{
-			key = true;
-		}
-		if(Rigth->item.controle == 0)
-		{
-			keytwo = true;
-		}
 		aux->left = left;
 		aux->right = Rigth;
 		aux->right->item.controle = aux->right->item.controle ;
 		aux->item.frequence = left->item.frequence + Rigth->item.frequence;
 		aux->item.controle = 1;
-		if (keytwo == true)aux->right->item.controle = 0;
-		if(key == true)aux->left->item.controle = 0;
 
 		H.erase(H.begin());
 		H.erase(H.begin());
@@ -77,7 +91,7 @@ void Preordem(Huffman *H)
 	{
 		if(H->item.controle != 1) {cout << H->item.frequence<<endl;}
 		
-	      //cout << H->item.controle << " "<< H->item.frequence<<endl;
+		//cout << H->item.controle << " "<< H->item.frequence<<endl;
 		Preordem(H->left);
 		Preordem(H->right);
 	}
