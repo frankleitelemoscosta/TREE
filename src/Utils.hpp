@@ -9,14 +9,13 @@
 #include"Heap.hpp"
 #include <dirent.h>
 #include <codecvt>
-#include "Tree.hpp"
 
 #define MAXFILES 2;
 
 using namespace std;
 
 wchar_t *getText(const locale &loc,int counter);
-void PrintEnd(std::ofstream &output, Vector &Heapp,int counter,Tree_1 **tre);
+void PrintEnd(std::ofstream &output, Vector &Heapp,int counter,string word,int contador_aux);
 std::ofstream createOutput();
 
 #endif

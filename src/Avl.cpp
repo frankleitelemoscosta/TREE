@@ -23,7 +23,7 @@ void insertItem_AVL(Tree_AVL **t, Record_AVL iteM) {
 	} else if (iteM.value > (*t)->item.value) {
 		insertItem_AVL(&(*t)->dir, iteM);
 
-		if (getPeso(&(*t)->dir) - getPeso(&(*t)->esq) == 2) {
+		if (getPeso(&(*t)->dir) - getPeso(&(*t)->esq) == -2) {
 			if (iteM.key > (*t)->dir->item.key)
 				rotacaoSimplesEsquerda_AVL(t);
 			else
@@ -94,6 +94,7 @@ void rotacaoSimplesDireita_AVL(Tree_AVL **t) {
 	Tree_AVL *aux;
 
 	aux = (*t)->esq;
+	cout << "Peso:" << (*t)->esq->peso << "\t |Chave:" << (*t)->esq->item.key << "\t |Quantidade de palavras com a mesma frequencia:" << (*t)->esq->item.quantity<<endl;
 	(*t)->esq = aux->dir;
 	aux->dir = *t;
 	(*t)->peso = getMaxPeso(getPeso(&(*t)->esq), getPeso(&(*t)->dir)) + 1;

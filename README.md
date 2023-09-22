@@ -7,11 +7,14 @@ Neste trabalho, o objetivo é criar um sistema que possibilite a funcionalidade 
 e oferecer sugestões de palavras aos usuários. Para atingir essa finalidade, adotaremos a
 estrutura da árvore binária como base.
 
-Para esclarecer as resouções diante do problema dado, sera discorrido as discussões neste arquivo com base nestas perguntas:
+Para esclarecer as resoluções diante do problema dado, sera discorrido as discussões neste arquivo com base nestas perguntas:
 </p>
-*Como fazer a leitura do arquivo de entrada de maneira que se consiga extrair todas as palavras e contar sua frequencia
 
-
+*Como fazer a leitura do arquivo de entrada de maneira que se consiga extrair todas as palavras e contar sua frequencia?
+*De que maneira, e com qual estrutura é possível extrair da estrutura de armazenamento do texto de entrada as 20 palavras mais frequentes?
+*Como vai ser introduzido as informações das 20 palavras mais recorrentes nas árvores binaria simples, avl e na árvore do código de huffman?
+*Como vão ser processados os textos de entrada para cada palavra que o usuário escrever no arquivo de entrada como palavra a ser procurada nos textos?
+*Se a palavra de entrada não estiver no texto o que vai ser feito?
 
 ## DESENVOLVIMENTO DO PROBLEMA
 
@@ -141,5 +144,22 @@ O Heap funciona da seguinte forma: inicialmente se reparte o vetor em duas parte
 </p>
 
 <img src="./img/miheap.gif" width = 30% alt="min heap example">
+<p style = "text-align = justify">
+Foram utilizadas três árvores diferentes: a árvore binária simples, cujo método de inserção envolve comparações de valores, posicionando os maiores valores na sub-árvore direita e os menores valores na sub-árvore esquerda. A árvore AVL, por sua vez, segue um método de inserção semelhante à binária simples, mas com a adição de considerar a distância entre um nó e suas sub-árvores direita e esquerda. Se essa diferença for igual a +2 ou -2, ocorre uma rotação de elementos, que nada mais é do que uma troca de posições dos elementos na árvore. Por último, temos a árvore de Huffman, que combina as frequências mais baixas de palavras. Como resultado, temos uma árvore com os maiores valores em sua sub-árvore direita e os menores valores em sua sub-árvore esquerda.
+</p>
+
+#### BINÁRIA SIMPLES
+
+#### AVL
+
+#### HUFFMAN
 
 ## CONCLUSÃO
+
+##REFERÊNCIAS
+
+HAROLD.Thomas.Algoritmos Teoria e prática.3ed.Elsevier Editora Ltda.Rio de Janeiro – RJ – Brasil.2012.pag 134 a 148.
+
+
+
+##AUTOR

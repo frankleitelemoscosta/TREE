@@ -39,8 +39,9 @@ wchar_t *getText(const std::locale &loc,int counter)
   return buffer;
 }
 
-void PrintEnd(std::ofstream &output, Vector &Heapp,int counter,Tree_1 **tre){
-        output << "FILE" << ":\n\n" << counter << "\n" << "WORD:\n\n" << "\n " << "FREQUENCIA NO TEXTO:\n\n " <<  "\n" << " HEAP:\n\n "  ;
+void PrintEnd(std::ofstream &output, Vector &Heapp,int counter,string word,int contador_aux){
+
+        output << "FILE" << ":\n\n" << counter << "\n" << "WORD:\n\n" << word << "\n\n" << "FREQUENCIA NO TEXTO:\n\n " << contador_aux <<  "\n" << " HEAP:\n\n "  ;
 
 
         for(int i = 0 ; i < MAXSIZE ; i++) {
