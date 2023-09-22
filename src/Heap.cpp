@@ -40,7 +40,7 @@ void Heapfy(Vector &Heapp)
 }
 
 
-void FillingHeap(Vector &Heapp,Hashh &mp){
+void FillingHeap(Vector &Heapp,Hashh &mp,wstring wstr){
 
   int counter = 0;
   Itens item;
@@ -51,6 +51,7 @@ void FillingHeap(Vector &Heapp,Hashh &mp){
             item.frequence = element.second.appearences;
             item.value = element.first;               
 
+            if(element.first != wstr)
             Heapp.vet.push_back(item);                                                     
 
             if(counter == (20 - 1)){

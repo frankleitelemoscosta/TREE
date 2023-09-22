@@ -30,7 +30,7 @@ struct Vector{
 
 };
 
-void FillingHeap(Vector &Heapp,Hashh &mp);
+void FillingHeap(Vector &Heapp,Hashh &mp,wstring wstr);
 void Heapfy(Vector &Heapp);
 
 

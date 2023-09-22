@@ -107,12 +107,12 @@ void Analysis(){
     ++ch;
     if(!(*ch))
     {
-      printf("File number: %d\n",counter);
       Tree_1 *tre = createTree();
       Tree_AVL *avl = createTree_AVL();
 
-      if(contador_aux > 0){      
-      FillingHeap(Heapp,mp);
+     if(contador_aux > 0){      
+      std::wstring wstr = converter.from_bytes(inputWords[counter_words]);
+      FillingHeap(Heapp,mp,wstr);
 
       //in here filling all trees
       FillingBasicTree(Heapp,&tre);

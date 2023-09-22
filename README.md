@@ -16,7 +16,7 @@ Para esclarecer as resoluções diante do problema dado, sera discorrido as disc
 *Como vão ser processados os textos de entrada para cada palavra que o usuário escrever no arquivo de entrada como palavra a ser procurada nos textos?
 *Se a palavra de entrada não estiver no texto o que vai ser feito?
 
-## DESENVOLVIMENTO DO PROBLEMA
+## FASES DE ESPECIFICAÇÃO, PROJETO E IMPLEMENTAÇÃO
 
 <p style = "text-align = justify">
 Primeiramente para começar a extrair os dados dos vários arquivos de entrada foi utilizado um contador para contar dentro do loop onde esta ocorrendo o caminhamento letra a letra do arquivo de entrada para que fosse possível concatenar as palavras e formar o nome de cada arquivo, a lógica é converter o inteiro em string e concatenar com o resto do nome que será padrão para a qualquer arquivo que entre no dataset como arquivo de entrada,o padrão de nomeação destes arquivos são: txt01, txt02, e assim sucessivamente, observe que foram definidos apenas dois textos de entrada, para adicionar mais textos a serem processados basta alterar no arquivo Analysis o desvio condicional onde se chama o métod getText dentro do loop while(*ch).
@@ -144,22 +144,122 @@ O Heap funciona da seguinte forma: inicialmente se reparte o vetor em duas parte
 </p>
 
 <img src="./img/miheap.gif" width = 30% alt="min heap example">
+
 <p style = "text-align = justify">
 Foram utilizadas três árvores diferentes: a árvore binária simples, cujo método de inserção envolve comparações de valores, posicionando os maiores valores na sub-árvore direita e os menores valores na sub-árvore esquerda. A árvore AVL, por sua vez, segue um método de inserção semelhante à binária simples, mas com a adição de considerar a distância entre um nó e suas sub-árvores direita e esquerda. Se essa diferença for igual a +2 ou -2, ocorre uma rotação de elementos, que nada mais é do que uma troca de posições dos elementos na árvore. Por último, temos a árvore de Huffman, que combina as frequências mais baixas de palavras. Como resultado, temos uma árvore com os maiores valores em sua sub-árvore direita e os menores valores em sua sub-árvore esquerda.
 </p>
 
 #### BINÁRIA SIMPLES
 
+<p style = "text-align = justify">
+A árvore binária, entre as três, é a implementação mais simples e fácil de compreender em termos de sua lógica de manipulação para inserção de dados. Na linha 118, é chamada uma função que faz parte do arquivo responsável pela árvore binária, cujo nome é 'Tree'. Esses dois arquivos, um de cabeçalho (header) e um de código-fonte, contêm todas as funções necessárias.
+Uma das funções é a 'FillingBinaryTree', que percorre todos os elementos da estrutura 'Heap', que contém as 20 palavras mais frequentes do texto em análise no momento da chamada da função. Nessa função, as chaves (strings) e os valores (frequência das palavras) são inseridos um por um. Em paralelo, é chamada a função 'insertItem', que cria novos nós e insere as informações de acordo com a frequência, posicionando-as à esquerda do nó atual se o valor for menor e à direita se for maior. Quando se move para a esquerda ou direita e encontra um nó nulo, um novo nó é criado e as informações são inseridas.
+Quanto à impressão, tanto na AVL quanto na árvore binária simples, foi utilizado o método de impressão central. Esse método consiste em percorrer a árvore de forma a caminhar para a esquerda até não ser possível mais, e depois começar a desempilhar as funções chamadas. Cada componente da pilha contém um comando de impressão, o que resulta na impressão correspondente ao nó. Em seguida, ocorre um deslocamento para a direita, que só ocorre se o filho não for nulo.
+</p>
+
 #### AVL
+
+<p style = "text-align = justify">
+Este tipo de representação de dados possue uma caracteristica importante para fins de pesquisa, inserção e remoção de dados em uma árvore, o mesmo se trata do balanceamento o qual garante que a altura da árvore seja log(n) assim o número de comparações para inserir, buscar e remover vai ser minimamente log(n + 1), para a mesma se manter balanceada é necessário realizar notações de acordo com o calculo de distancia do nó folha ao respectivo nó de análise, sendo nós a esquerda representado valores negativos e os nós a direita representando valores positivos, se a subtração dos niveis abaixo do nó corrente resultarem em +2 ou -2 será feito deslocamento dos nós para esquerda se for -2 ou para direita se for +2.As rotações duplas vão acontecer quando os sinais dos calculos dos pesos de um nó pai e um nó filho do mesmo forem distintos.
+</p>
 
 #### HUFFMAN
 
+<p style = "text-align = justify">
+A codificação de Huffman veio para resolver um problema de representação de valores como bits de maneira eficiente, qualquer sistema de representação que possua a propriedade de qualquer sequencia de bits não corresponda a mais de uma sequência de letras é considerado um código de prefixo que é o caso do código de huffman, e sendo assim é possível o representar como uma árvore binária, que é o que é feito neste trabalho, o que é feito é passar todos os elementos da Heap para a árvore do código de Huffman, e após ser passados os elementos para a estrutura se inicia construção da árvore, o que ocorre é o seguinte, primeiramento se ordena o conjunto de dados de maneira crescente, pois assim é possível ter nas duas primeiras posições as menores frequencias e assim se cria um novo nó da mesma tipagem cujo filhos esquerdo e direito são os estes dois primeiros nós assim você vai sobrescrevendo um nó e elimnando o outro até que sobre apenas o nó raiz na estrutura, concretizando a árvore binária, completa,pois ela tem nós em todos os seus niveis, mas não é totalmente cheia de nós em todos os niveis.O mesmo é muito utilizado para compressão de dados.
+</p>
+
+<p style = "text-align = justify">
+Ao fim dos procedimentos aqui descritos se somava um contador que era passado como parametro para uma função a qual concatenava com o padrão de nome de todos os arquivos, ja mencionado neste presente relatório e com isso o próximo arquivo é armazenado na Hash, inserido as 20 palavras mais frequentes no Heap e inserido tambem nas árvores binária, Avl e na árvore do código de Huffman, porem enquanto se lê o arquivo de entrada e armazena as palavras no hash, tambem foi sendo feito uma verificação se a palavra estava no texto ou não, se a mesma não estiver não será estruturado o Heap, a árvore binária e as demais, pois não seria lógico diante da proposta de recomendação textual, pois se a palavra esta no texto e mostrando se as palavras mais frequentes do mesmo a tendencia de se recomendar o texto é grande, enquanto em que em um texto onde aquela palavra não esta não é lógico recomenda-lo ao usuário, já que não se adequa a sua necessidade.
+</p>
+
+## MÁQUINA DE TESTE
+
+<table style="width: 100%;" border="1">
+        <tr align="center" >
+            <td colspan="2">
+                <div>
+                        <br>
+                        <p class="sizeText color">Notebook 550XDA Sansung</p>
+                        <br>        
+                </div>
+            </td>
+        <tr>
+        <tr align="center">
+            <td>
+               <div>
+                    <br>
+                    <p class="sizeText color">RAM</p>
+                    <br>
+               </div> 
+            </td>
+            <td >
+                <br>
+                    <p class="sizeText color">8Gb DDR4</p>
+                <br>
+            </td>
+        </tr>
+        <tr align="center">
+            <td style="width: 20%;">
+                <p class="sizeText color">
+                    <br>
+                    <p class="sizeText color">SO</p>
+                    <br>
+                </p>
+            </td>
+            <td >
+                <br>
+                    <p class="sizeText color">Linux Ubuntu v22.04, 64bits</p>
+                <br>
+            </td>
+        </tr>
+        <tr align="center">
+            <td style="width: 20%;">
+                <br>
+                    <p class="sizeText color">    
+                        CPU
+                    </p>
+                <br>
+            </td>
+            <td >
+                <br>
+                    <p class="sizeText color">Intel core i5 11° geração 2,40GHz</p>
+                <br>
+            </td>
+        </tr>
+    </table>
+
+
 ## CONCLUSÃO
 
-##REFERÊNCIAS
+<p style = "text-align = justify">
+
+Pode-se concluir que uma maneira muito eficiente de extrai palavras salvando sua frequencia é usando uma hash, pois imagine se fosse necessário contar a frequência em uma lista linear por exemplo seria necessário percorrer os n elementos incesseridos no pior caso para encontrar o elemento,e ainda neste projeto, desenvolvemos um sistema de autocompletar e sugestões de palavras que utiliza uma abordagem baseada em árvores binárias, codificação de Huffman e árvores AVL para oferecer aos usuários uma experiência aprimorada ao procurar palavras em um conjunto de textos fornecidos. Ao longo do processo, realizamos várias etapas cruciais, cada uma contribuindo para a eficácia e a eficiência do sistema.Foi feita a coleta de dados a partir de um arquivo de entrada, que serviu como base para as pesquisas e sugestões de palavras. Em seguida, implementamos uma árvore binária padrão, que nos permitiu identificar palavras relevantes e próximas às pesquisas dos usuários. A frequência das palavras e sua proximidade com os termos de pesquisa foram consideradas na determinação da relevância.
+
+A segunda etapa envolveu a codificação de Huffman, uma técnica que otimiza a estrutura da árvore binária. Isso resultou em códigos para cada palavra e uma reorganização da árvore com base nesses códigos. Avaliamos a eficácia dessa abordagem em relação à árvore binária padrão, buscando melhorias no desempenho e na funcionalidade.
+
+Por fim, implementamos uma árvore AVL, que é uma estrutura de dados balanceada, e repetimos o processo de análise. Comparamos o tempo médio de processamento da construção da estrutura e a geração de saída com as abordagens anteriores. Essa comparação nos permitiu avaliar a eficácia da árvore AVL em relação às outras implementações.
+
+Ao concluir este projeto, obtivemos uma compreensão mais profunda das diferentes abordagens das árvores binárias e sua influência no sistema de autocompletar e sugestões de palavras. Ficou claro que a escolha da estrutura de dados tem um impacto significativo no desempenho do sistema. A codificação de Huffman mostrou-se uma técnica promissora para otimização, enquanto a árvore AVL demonstrou sua eficácia em manter um desempenho consistente.
+
+Além disso, o sistema resultante fornece aos usuários uma maneira eficaz de encontrar palavras relevantes e sugestões úteis em um conjunto de textos, o que pode ser aplicado em várias situações práticas. A análise comparativa realizada neste trabalho destaca a importância de escolher a estrutura de dados correta para resolver problemas específicos.
+
+Em resumo, este projeto nos permitiu explorar e entender as vantagens e desvantagens de diferentes abordagens de árvores binárias na criação de um sistema de autocompletar e sugestões de palavras. Com base em nossa análise, podemos concluir que a escolha da estrutura de dados é fundamental para o sucesso de um sistema desse tipo, e as técnicas de otimização, como a codificação de Huffman, podem desempenhar um papel significativo na melhoria do desempenho.
+
+</p>
+## REFERÊNCIAS
 
 HAROLD.Thomas.Algoritmos Teoria e prática.3ed.Elsevier Editora Ltda.Rio de Janeiro – RJ – Brasil.2012.pag 134 a 148.
+ROSEN.Kenneth.Matematica Discreta e Suas aplicações.AMGH Editora Ltda.São Paulo - SP - Brasil.2010.pag 695 a 707.
 
+## AUTOR
 
+<p style = "text-align = justify">
+Frank Leite Lemos Costa. Aluno de Engenharia da Computação no <a href = "https://www.cefetmg.br/">CEFET</a>, 4° período.
+</p>
 
-##AUTOR
+## CONTATO
+
+<p style = "text-align = justify">
+e-mail: frankcefet090@gmail.com
+</p>
