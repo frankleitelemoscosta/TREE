@@ -52,7 +52,9 @@ void FillingHeap(Vector &Heapp,Hashh &mp,wstring wstr){
             item.value = element.first;               
 
             if(element.first != wstr)
-            Heapp.vet.push_back(item);                                                     
+            {
+              Heapp.vet.push_back(item);                                                     
+            }
 
             if(counter == (20 - 1)){
             
@@ -60,7 +62,7 @@ void FillingHeap(Vector &Heapp,Hashh &mp,wstring wstr){
             }
             counter++;            
         }else{
-          if(element.second.appearences > Heapp.vet[0].frequence)
+          if(element.second.appearences > Heapp.vet[0].frequence && (element.first != wstr))
           {
             Heapp.vet[0].value = element.first;
             Heapp.vet[0].frequence = element.second.appearences;

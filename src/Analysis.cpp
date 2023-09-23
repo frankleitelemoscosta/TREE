@@ -114,14 +114,34 @@ void Analysis(){
       std::wstring wstr = converter.from_bytes(inputWords[counter_words]);
       FillingHeap(Heapp,mp,wstr);
 
+      auto start_time = std::chrono::high_resolution_clock::now();
       //in here filling all trees
       FillingBasicTree(Heapp,&tre);
 
+      auto end_time = std::chrono::high_resolution_clock::now();
+
+      std::chrono::duration<double> elapsed_time = end_time - start_time;
+      double seconds = elapsed_time.count();
+
+      cout << "Tempos para o arquivo "<< counter <<endl;
+
+      cout << "Tempo Basic Tree: " << seconds << "s"<<endl;
+
+      seconds = 0;
+
+      start_time = std::chrono::high_resolution_clock::now();
+
       FillingAvl(Heapp,&avl);
 
+      end_time = std::chrono::high_resolution_clock::now();
+
+      elapsed_time = end_time - start_time;
+
+      seconds = elapsed_time.count();
+
+      cout << "Tempo Avl: " << seconds << "s"<<endl;
       //in here add the print of the heap.
       PrintEnd(output,Heapp,counter,inputWords[counter_words],contador_aux);
-      
      
       central(&tre,output);
 
@@ -130,9 +150,21 @@ void Analysis(){
       central_AVL(avl,output);
 
       output << "\nHUFFMAN:\n\n";
-      FillingHuffman(Heapp,output);
       
-      output << "======================================================================================================================================\n";
+      start_time = std::chrono::high_resolution_clock::now();  
+      
+      FillingHuffman(Heapp,output);
+
+      end_time = std::chrono::high_resolution_clock::now();
+      
+      elapsed_time = end_time - start_time;
+      
+      seconds = elapsed_time.count();
+    
+      cout << "Tempo Huffman: " << seconds << "s"<<endl;
+
+
+     output << "======================================================================================================================================\n";
 
       }
        counter++;

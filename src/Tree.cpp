@@ -37,14 +37,6 @@ void insertItem(Tree_1 **tre, Record_1 r) {
 	}
 }
 
-void preordem(Tree_1 *tre) {
-	if (!(tre == NULL)) {
-		std::cout << tre->reg.key << " ";
-		preordem(tre->esq);
-		preordem(tre->dir);
-	}
-}
-
 void central(Tree_1 **tre,std::ofstream &output) {
   
 
@@ -61,14 +53,6 @@ void central(Tree_1 **tre,std::ofstream &output) {
         central(&(*tre)->dir,output);
 	}
 	
-}
-
-void posordem(Tree_1 *tre) {
-	if (!(tre == NULL)) {
-		posordem(tre->esq);
-		posordem(tre->dir);
-		std::cout << tre->reg.key << " ";
-	}
 }
 
 void FillingBasicTree(Vector &Heapp, Tree_1 **tre){
