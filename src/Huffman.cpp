@@ -89,7 +89,7 @@ void Preordem(Huffman *H,std::ofstream &output)
 {
 	if(H != NULL)
 	{
-		if(H->item.controle != 1) {output << H->item.frequence<<endl;}
+		if(H->item.controle != 1) {output << H->item.word << H->item.frequence<<endl;}
 		
 		//cout << H->item.controle << " "<< H->item.frequence<<endl;
 		Preordem(H->left,output);

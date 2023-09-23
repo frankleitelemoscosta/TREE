@@ -65,18 +65,18 @@ void central_AVL(Tree_AVL *t,std::ofstream &output) {
 	if (!(t == NULL)) {
 		central_AVL(t->esq,output);
 		string str(t->item.key);
-		output << str << (str.length() < 8 ? "\t\t\t" :
-                str.length() < 16 ? "\t\t\t\t\t" :
-                str.length() < 24 ? "\t\t\t\t\t\t" :
+		output << str << (str.length() < 8 ? "\t\t\t\t" :
+                str.length() < 16 ? "\t\t\t" :
+                str.length() < 24 ? "\t\t\t" :
                 str.length() < 32 ? "\t\t\t\t\t\t\t" :
                 "\t") << t->item.value << "\n";
 	        for(int i = 0 ; i < t->item.quantity ; i++)
 	        {
-	  	    output << t->item.palavras[i].palavra <<  (str.length() < 8 ? "\t\t\t" :
-                str.length() < 16 ? "\t\t\t\t" :
-                str.length() < 24 ? "\t\t\t\t\t\t\t\t" :
+	  	    output << t->item.palavras[i].palavra <<  (str.length() < 8 ? "\t\t\t\t" :
+                str.length() < 16 ? "\t\t\t" :
+                str.length() < 24 ? "\t\t\t\t\t" :
                 str.length() < 32 ? "\t\t\t\t\t\t\t" :
-                "\t") << "\n";
+                "\t") <<  t->item.value <<"\n";
 	        }
                 central_AVL(t->dir,output);
 	}
